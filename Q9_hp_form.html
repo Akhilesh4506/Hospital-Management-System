@@ -1,0 +1,114 @@
+<html>
+    <head>
+       <title>Forms</title>
+        <style>
+          .error {color:red;}
+          body{
+             background-image:url('hos3.jpg');
+              background-position:absolute;
+             background-size:cover;
+         
+             
+              }
+        </style>
+
+    </head>
+    <body>
+       <h1 align="center">Hospital Form</h1>
+       <p align="center">Please compelete the form.</p>
+        <p align="center"><span class="error">* required field</span></p>
+       <form action="Q9_record.php" method="post">
+	  <fieldset>
+                 <legend>
+                  <h3>DOCTORS</h3>
+                 </legend>
+                 ID: <input type="number" name="id">
+                     <?php if(isset($idErr)) { ?>
+                     <span class="error">* <?php echo $idErr ?></span>
+                     <?php }  ?>
+
+                          <br><br>
+                
+                  Name: <input type="text" name="name">
+                        <?php if(isset($nameErr)) { ?>
+                    <span class="error">* <?php echo $nameErr ?></span>
+                     <?php }  ?>
+                        <br><br>                 
+                Specialization: 
+                     <input type="radio" name="sp" value="Physician">Physician
+                     <input type="radio" name="sp" value="Sergeon">Sergeon
+                     <input type="radio" name="sp" value="Dentist">Dentist 
+                     <?php if(isset($spErr)) { ?>
+                     <span class="error">* <?php echo $spErr ?></span>
+                      <?php }  ?>
+                      <br><br>
+              DOJ:
+                    <input type="number required" name="doj">
+                      <?php if(isset($dojErr)) { ?>
+                    <span class="error">* <?php echo $dojErr ?></span>
+                     <?php }  ?>
+                  <br><br>
+             Total Experience:
+                  <input type="number required" name="exp">
+                    <?php if(isset($expErr)) { ?>
+                    <span class="error">* <?php echo $expErr ?></span>
+                     <?php }  ?>
+                  <br><br>
+              Age:
+                  <input type="number required" name="age">
+                     <?php if(isset($ageErr)) { ?>
+                    <span class="error">* <?php echo $ageErr ?></span>
+                     <?php }  ?>
+                  <br><br>
+             Contact No. 
+                 <input type="tel" placeholder="+91" name="no">
+                    <?php if(isset($noErr)) { ?>
+                    <span class="error">* <?php echo $noErr ?></span>
+                     <?php }  ?>
+                  <br><br>
+          </fieldset>
+          
+	  <fieldset>
+                 <legend>
+                  <h3>Rooms/Wards</h3>
+                 </legend>
+
+              Type: 
+                      
+                       <input type="radio" name="type" value="General">General
+                       <input type="radio" name="type" value="ICU">ICU
+                       <input type="radio" name="type" value="Private">Private
+                        <?php if(isset($typeErr)) { ?>
+                        <span class="error">* <?php echo $typeErr ?></span>
+                        <?php }  ?>
+                       <br><br>
+  
+              Total No. Of Beds:
+                       <input type="number required" name="bed">
+                          <?php if(isset($bedErr)) { ?>
+                          <span class="error">* <?php echo $bedErr ?></span>
+                        <?php }  ?>
+                       <br><br>
+              Charges Per Day:   <input type="number required" name="charge">
+                         <?php if(isset($chargeErr)) { ?>
+                          <span class="error">* <?php echo $chargeErr ?></span>
+                        <?php }  ?>
+                        <br><br>
+             NO. Of Patients:  
+                       <input type="number required" name="pat">
+                         <?php if(isset($patErr)) { ?>
+                    <span class="error">* <?php echo $patErr ?></span>
+                     <?php }  ?>
+                        <br><br>                  
+          </fieldset>
+          <br><br>
+           Search Specialist:<input type="text" name="search">
+           <?php if(isset($searchErr)) { ?>
+                          <span class="error">* <?php echo $searchErr ?></span>
+                        <?php }  ?>
+
+          <br><br>
+          <input type="submit" name="submit" value="Submit">
+       </form>
+    </body>
+</html>
